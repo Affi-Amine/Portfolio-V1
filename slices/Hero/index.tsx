@@ -6,7 +6,6 @@ import { Content, KeyTextField } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import {gsap} from "gsap";
 import { useEffect, useRef } from "react";
-import IframeModel from "@/app/components/IFrameModel";
 import Shapes from "./Shapes";
 import Model3D from "@/app/components/Model3D"
 

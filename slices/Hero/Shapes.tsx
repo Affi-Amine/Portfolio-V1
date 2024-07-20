@@ -46,11 +46,11 @@ export default function Shapes() {
 
 function Geometries() {
     const geometries = [
-        {
+        /*{
             position: [0, 0, 0],
             r: 0.3,
             geometry: new THREE.IcosahedronGeometry(3), //Gem
-        },
+        },*/
         {
             position: [1, -0.75, 4],
             r: 0.4,
