@@ -53,7 +53,7 @@ export default function Model3D() {
             camera={{ position: [0, 7, -25], fov: 35, near: 1, far: 40 }}
         >
             <Suspense fallback={null}>
-                <Float speed={1} rotationIntensity={1} floatIntensity={2}>
+                <Float speed={4} rotationIntensity={1} floatIntensity={2}>
                     <group rotation={[0, Math.PI, 0]} onClick={(e) => (e.stopPropagation(), setOpen(!open))}>
                         <Model open={open} hinge={props.open.to([0, 1], [1.575, -0.425])} />
                     </group>
