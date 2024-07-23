@@ -1,10 +1,12 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SliceZone } from "@prismicio/react";
-
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import Bounded from "@/app/components/Bounded";
+import { ContainerScroll } from "@/app/components/ui/container-scroll-animation";
+import Image from "next/image";
+import { PrismicNextImage } from "@prismicio/next";
 
 type Params = { uid: string };
 
@@ -15,10 +17,22 @@ export default async function Page({ params }: { params: Params }) {
     .catch(() => notFound());
 
   return (
-  <Bounded >
-    <SliceZone slices={page.data.slices} components={components} />
-  </Bounded>
-);
+    <Bounded>
+      <ContainerScroll titleComponent={<h1 className="text-4xl font-bold mb-4">{page.data.title}</h1>}>
+        <div className="h-full w-full overflow-y-auto flex flex-col">
+          {page.data.hover_image && (
+            <div className="w-full h-64 relative mb-4">
+              <PrismicNextImage
+                field={page.data.hover_image}
+                className="rounded-t-lg object-cover "
+              />
+            </div>
+          )}
+        </div>
+      </ContainerScroll>
+      <SliceZone slices={page.data.slices} components={components} />
+    </Bounded>
+  );
 }
 
 export async function generateMetadata({

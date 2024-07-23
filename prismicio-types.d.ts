@@ -231,7 +231,7 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-type ProjectDocumentDataSlicesSlice = TextBlockSlice;
+type ProjectDocumentDataSlicesSlice = ImageblockSlice | TextBlockSlice;
 
 /**
  * Content for Project documents
@@ -247,17 +247,6 @@ interface ProjectDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField;
-
-  /**
-   * Date field in *Project*
-   *
-   * - **Field Type**: Timestamp
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.date
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#timestamp
-   */
-  date: prismic.TimestampField;
 
   /**
    * Hover Image field in *Project*

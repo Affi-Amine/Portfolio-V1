@@ -19,13 +19,6 @@
         },
         "type": "UID"
       },
-      "date": {
-        "type": "Timestamp",
-        "config": {
-          "label": "Date",
-          "placeholder": ""
-        }
-      },
       "hover_image": {
         "type": "Image",
         "config": {
@@ -39,6 +32,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "imageblock": {
+              "type": "SharedSlice"
+            },
             "text_block": {
               "type": "SharedSlice"
             }
